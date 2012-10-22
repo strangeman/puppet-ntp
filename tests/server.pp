@@ -3,4 +3,4 @@ class {'ntp::server':
               '1.debian.pool.ntp.org iburst dynamic',
               '2.debian.pool.ntp.org iburst dynamic',
               '3.debian.pool.ntp.org iburst dynamic',]
- }
+}
