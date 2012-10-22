@@ -19,27 +19,27 @@
 #
 class ntp {
 
-        $client_servers = ["ntp.localnet", 
-                            "time.nuri.net",
-                            "ntp.cesnet.cz",] 
+  $client_servers = [ 'ntp.localnet',
+                      'time.nuri.net',
+                      'ntp.cesnet.cz', ]
 
-        package {'ntp':
-                ensure => installed
-        } 
+  package {'ntp':
+  ensure => installed
+  }
 
-        file {'/etc/ntp.conf':
-                content => template("ntp/ntp.conf.client.erb"),
-                owner => 'root',
-                group => 'root',
-                mode => '0644',
-        }
+  file {'/etc/ntp.conf':
+    content => template('ntp/ntp.conf.client.erb'),
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+  }
 
-        service {'ntp':
-                ensure => running,
-                enable => true,
-                hasrestart => true,
-                hasstatus => true,
-                }
+  service {'ntp':
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+  }
 
-        Package['ntp']->File['/etc/ntp.conf']~>Service['ntp']
+  Package['ntp']->File['/etc/ntp.conf']~>Service['ntp']
 }

@@ -5,7 +5,7 @@
 # This class provides ntp server configuration
 #
 # === Parameters
-# [*servers*] 
+# [*servers*]
 #   список серверов / servers list
 #
 # === Actions
@@ -24,7 +24,7 @@
 # Anton Markelov <doublic@gmail.com> <markelovaa@dalstrazh.ru>
 #
 class ntp::server($servers=['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org']) inherits ntp {
-  File["/etc/ntp.conf"] {
-    content => template("ntp/ntp.conf.server.erb"),
+  File['/etc/ntp.conf'] {
+    content => template('ntp/ntp.conf.server.erb'),
   }
-} 
+}
