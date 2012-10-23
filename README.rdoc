@@ -1,0 +1,44 @@
+== Class: ntp
+
+Данный модуль предоставляет конфигурацию демона времени ntp
+Данный класс предоставляет конфигурацию клиента ntp
+
+This module provide 'ntp' time daemon configuration
+This class provide ntp client configuration
+
+=== Actions
+- установка пакета ntp / install ntp package
+- настройка демона ntp в роли клиента / setting ntp as client
+- запуск и контроль за демоном / launch and control ntp daemon
+
+=== Examples
+ include ntp
+
+=== Authors
+Anton Markelov <doublic@gmail.com> <markelovaa@dalstrazh.ru>
+
+== Class: ntp::server (inherits ntp)
+
+Данный класс предоставляет конфигурацию сервера ntp
+
+This class provides ntp server configuration
+
+=== Parameters
+[*servers*]
+  список серверов / servers list
+
+=== Actions
+- все то же самое, что и класс ntp / all from 'ntp' class
+- настройка демона ntp в роли сервера / setting ntp as server
+
+=== Examples
+ class {'ntp::server':
+     servers=>["0.debian.pool.ntp.org iburst dynamic",
+               "1.debian.pool.ntp.org iburst dynamic",
+               "2.debian.pool.ntp.org iburst dynamic",
+               "3.debian.pool.ntp.org iburst dynamic"]
+ }
+
+=== Authors
+Anton Markelov <doublic@gmail.com> <markelovaa@dalstrazh.ru>
+
