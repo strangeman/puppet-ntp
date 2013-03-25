@@ -41,6 +41,7 @@ restrict ::1
 # Clients from this (example!) subnet have unlimited access, but only if
 # cryptographically authenticated.
 restrict 192.168.0.0 mask 255.255.0.0 nomodify notrap
+restrict 10.1.0.0 mask 255.255.0.0 nomodify notrap
 restrict localhost
 
 server 127.127.1.0
