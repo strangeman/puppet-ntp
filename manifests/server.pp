@@ -25,7 +25,7 @@
 # === Authors
 # Anton Markelov <doublic@gmail.com> <markelovaa@dalstrazh.ru>
 #
-class ntp::server($servers=['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org']) inherits ntp {
+class ntp::server($servers=['0.pool.ntp.org', '1.pool.ntp.org', '2.pool.ntp.org'], $subnets) inherits ntp {
   File['/etc/ntp.conf'] {
     content => template('ntp/ntp.conf.server.erb'),
   }
