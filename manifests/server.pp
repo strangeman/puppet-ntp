@@ -17,7 +17,9 @@
 #      servers=>["0.debian.pool.ntp.org iburst dynamic",
 #                "1.debian.pool.ntp.org iburst dynamic",
 #                "2.debian.pool.ntp.org iburst dynamic",
-#                "3.debian.pool.ntp.org iburst dynamic"]
+#                "3.debian.pool.ntp.org iburst dynamic"],
+#      subnets => ["192.168.0.0 mask 255.255.0.0",
+#                  "10.1.0.0 mask 255.255.255.0"]
 #  }
 #
 # === Authors
