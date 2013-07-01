@@ -46,5 +46,7 @@ restrict <%= subnet %> nomodify notrap
 <% end -%>
 restrict localhost
 
+logfile /var/log/ntp.log
+
 server 127.127.1.0
 fudge   127.127.1.0 stratum 1
